@@ -4,7 +4,7 @@
 .settings/
 
 # Intellij
-testserver/.idea/
+.idea/
 *.iml
 *.iws
 
