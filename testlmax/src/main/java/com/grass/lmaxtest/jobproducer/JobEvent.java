@@ -14,4 +14,8 @@ public class JobEvent {
     public void clear() {
         job = null;
     }
+
+    public boolean isEmpty() {
+        return job == null;
+    }
 }

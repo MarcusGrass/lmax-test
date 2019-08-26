@@ -3,7 +3,6 @@ package com.grass.lmaxtest.requestsender.router;
 import com.grass.lmaxtest.jobproducer.Job;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
-import sun.plugin.dom.exception.InvalidStateException;
 
 public class FastRouter extends AbstractRouter {
 
@@ -20,7 +19,7 @@ public class FastRouter extends AbstractRouter {
             case RUNNING:
                 return generateRunningStateGet();
             default:
-                throw new InvalidStateException("Invalid jobstate for job=" + job);
+                throw new IllegalStateException("Invalid jobstate for job=" + job);
         }
     }
 

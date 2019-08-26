@@ -42,7 +42,6 @@ public class AsyncRequestRunner implements Callable<Object> {
             }
             ResponseModel model = json.readValue(responseBuilder.toString(), ResponseModel.class);
             job.setLastResponse(model);
-            JobProducer.pushToQueue(job);
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Exception in thread.");

@@ -23,7 +23,7 @@ public class RequestSender implements EventHandler<JobEvent> {
         AbstractRouter router = DELEGATOR.getAssignedRouter(job);
         if (router.isComplete(job)) {
             router.collectData(job);
-            JobProducer.announceCompletionStatistics();
+            jobEvent.clear();
         } else {
             try {
                 ExecutorService executorService = DELEGATOR.getAssignedThreadExecutor(router);
